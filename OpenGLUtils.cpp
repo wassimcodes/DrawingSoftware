@@ -2,7 +2,6 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 
-// Function to create and bind a Vertex Array Object (VAO)
 GLuint createVertexArrayObject() {
     GLuint VAO;
     glGenVertexArrays(1, &VAO);
@@ -10,7 +9,7 @@ GLuint createVertexArrayObject() {
     return VAO;
 }
 
-// Function to create and bind a Vertex Buffer Object (VBO) with provided vertex data
+
 GLuint createVertexBufferObject(const std::vector<float>& vertices) {
     GLuint VBO;
     glGenBuffers(1, &VBO);
@@ -19,7 +18,7 @@ GLuint createVertexBufferObject(const std::vector<float>& vertices) {
     return VBO;
 }
 
-// Function to draw a circle using provided VBO and VAO, vertex data, drawing mode.
+
 void drawCircle(GLuint VAO, GLuint VBO, const std::vector<float>& vertices, GLenum mode) {
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);

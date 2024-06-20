@@ -2,7 +2,6 @@
 #include <GLFW/glfw3.h>
 #include "WindowManager.h"
 #include "Callbacks.h"
-#include "Callbacks.h"
 #include "ShaderManager.h"
 #include "OpenGLUtils.h"
 #include "Drawing.h"
@@ -16,6 +15,9 @@ int main()
 {
     GLFWwindow* window = WindowManager::createWindow(720 , 720, "Wacky Drawing Software");
     WindowManager::setupCallbacks(window);
+
+    GLuint shaderProgram = createShaderProgram("vertex_shader.vert", "fragment_shader.frag");
+    glUseProgram(shaderProgram);
 
     GLuint VAO = createVertexArrayObject();
     GLuint VBO = 0;
