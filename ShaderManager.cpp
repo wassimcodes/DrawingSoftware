@@ -1,5 +1,3 @@
-// ShaderManager.cpp
-
 #include "ShaderManager.h"
 #include <fstream>
 #include <sstream>
@@ -18,7 +16,6 @@ GLuint compileShader(GLenum shaderType, const std::string& source) {
     const char* sourceCStr = source.c_str();
     glShaderSource(shader, 1, &sourceCStr, nullptr);
     glCompileShader(shader);
-
     GLint success;
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
     return shader;
