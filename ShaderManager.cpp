@@ -16,8 +16,6 @@ GLuint compileShader(GLenum shaderType, const std::string& source) {
     const char* sourceCStr = source.c_str();
     glShaderSource(shader, 1, &sourceCStr, nullptr);
     glCompileShader(shader);
-    GLint success;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
     return shader;
 }
 
@@ -30,9 +28,6 @@ GLuint createShaderProgram(const char* vertexShaderPath, const char* fragmentSha
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
-
-    GLint success;
-    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);

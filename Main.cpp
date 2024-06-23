@@ -4,63 +4,51 @@
 #include "Callbacks.h"
 #include "ShaderManager.h"
 #include "OpenGLUtils.h"
+#include "DrawingUtils.h"
 #include "Drawing.h"
-#include<iostream>
+#include <iostream>
+#include <vector>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
-int main()
-{
-    GLFWwindow* window = WindowManager::createWindow(720 , 720, "Wacky Drawing Software");
+
+int main() {
+
+    GLFWwindow* window = WindowManager::createWindow(720, 720, "Wacky Drawing Software");
     WindowManager::setupCallbacks(window);
+
+    glfwSwapInterval(0);
+
+    GLuint VAO, VBO;
+    initializeBuffers(VAO, VBO);
 
     GLuint shaderProgram = createShaderProgram("vertex_shader.vert", "fragment_shader.frag");
     glUseProgram(shaderProgram);
 
-    GLuint VAO = createVertexArrayObject();
-    GLuint VBO = 0;
-    glGenBuffers(1, &VBO);
     std::vector<std::vector<float>> circles;
 
-    while (!glfwWindowShouldClose(window))
-    {
+    const float radius = 0.005f;
+    const int sides = 30;
+
+    while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        double xpos, ypos;
-        glfwGetCursorPos(window, &xpos, &ypos);
-        int width, height;
-        glfwGetFramebufferSize(window, &width, &height);
-
-        float x = (float)xpos / width * 2.0f - 1.0f;
-        float y = -(float)ypos / height * 2.0f + 1.0f;
-        const float radius = 0.005f;
-
-        std::vector<float> currentCircle = DrawingCircle::drawCircle(x, y, radius);
-
-        VBO = createVertexBufferObject(currentCircle);
-
-        drawCircle(VAO, VBO, currentCircle, GL_TRIANGLE_FAN);
-
-        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
-            circles.push_back(currentCircle);
-        }
-
-       
+        static double prevXpos, prevYpos; 
+        handleCursorMovement(window, prevXpos, prevYpos, circles, VBO, VAO, radius, sides);
         for (const auto& circle : circles) {
+            updateVertexBuffer(VBO, circle);
             drawCircle(VAO, VBO, circle, GL_TRIANGLE_FAN);
         }
-
         glfwPollEvents();
         glfwSwapBuffers(window);
-
-
     }
 
+
+    glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &VAO);
     glfwDestroyWindow(window);
     glfwTerminate();
 
     return 0;
 }
-

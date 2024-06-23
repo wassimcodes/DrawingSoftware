@@ -21,7 +21,15 @@
   <ItemGroup>
     <ClCompile Include="Callbacks.cpp" />
     <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="DrawingUtils.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="ImGuiApp\MyApplication\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\imgui.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\imgui_demo.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\imgui_draw.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\imgui_tables.cpp" />
+    <ClCompile Include="ImGuiApp\MyApplication\imgui_widgets.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OpenGLUtils.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
@@ -30,6 +38,15 @@
   <ItemGroup>
     <ClInclude Include="Callbacks.h" />
     <ClInclude Include="Drawing.h" />
+    <ClInclude Include="DrawingUtils.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imconfig.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imgui.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imgui_internal.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imstb_rectpack.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imstb_textedit.h" />
+    <ClInclude Include="ImGuiApp\MyApplication\imstb_truetype.h" />
     <ClInclude Include="OpenGLUtils.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="WindowManager.h" />
@@ -91,19 +108,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(ProjectDir)ImGuiApp\MyApplication\;$(ProjectDir)ImGuiApp\MyApplication\backends\;$(IncludePath)</IncludePath>
     <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(ProjectDir)ImGuiApp\MyApplication\;$(ProjectDir)ImGuiApp\MyApplication\backends\;$(IncludePath)</IncludePath>
     <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(ProjectDir)ImGuiApp\MyApplication\;$(ProjectDir)ImGuiApp\MyApplication\backends\;$(IncludePath)</IncludePath>
     <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include;$(ProjectDir)ImGuiApp\MyApplication\;$(ProjectDir)ImGuiApp\MyApplication\backends\;$(IncludePath)</IncludePath>
     <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
