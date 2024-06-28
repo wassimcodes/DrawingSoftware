@@ -27,8 +27,6 @@ void handleCursorMovement(GLFWwindow* window, double& prevXpos, double& prevYpos
             circles.push_back(currentCircle);
         }
     }
-
-    // Update previous cursor position
     prevXpos = xpos;
     prevYpos = ypos;
 }

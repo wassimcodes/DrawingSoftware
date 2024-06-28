@@ -23,6 +23,7 @@
     <ClCompile Include="Drawing.cpp" />
     <ClCompile Include="DrawingUtils.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="GuiManager.cpp" />
     <ClCompile Include="ImGuiApp\MyApplication\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="ImGuiApp\MyApplication\backends\imgui_impl_opengl3.cpp" />
     <ClCompile Include="ImGuiApp\MyApplication\imgui.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="Callbacks.h" />
     <ClInclude Include="Drawing.h" />
     <ClInclude Include="DrawingUtils.h" />
+    <ClInclude Include="GuiManager.h" />
     <ClInclude Include="ImGuiApp\MyApplication\backends\imgui_impl_glfw.h" />
     <ClInclude Include="ImGuiApp\MyApplication\backends\imgui_impl_opengl3.h" />
     <ClInclude Include="ImGuiApp\MyApplication\imconfig.h" />
