@@ -4,6 +4,10 @@
 bool darkMode = true;
 ImVec4 clear_color = ImVec4(0, 0, 0, 0);
 
+//bool IsMouseHoveringAnyWindow() {
+//    return ImGui::IsWindowHovered(ImGuiHoveredFlags_AnyWindow) || ImGui::IsAnyItemHovered();
+//}
+
 void GuiManager::Init(GLFWwindow* window) {
     ImGui::CreateContext();
     ImGui_ImplGlfw_InitForOpenGL(window, true);

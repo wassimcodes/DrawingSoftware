@@ -1,7 +1,10 @@
 #include "DrawingUtils.h"
 #include "Drawing.h"
 #include "OpenGLUtils.h"
-#include <iostream> 
+#include <iostream>
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
 void handleCursorMovement(GLFWwindow* window, double& prevXpos, double& prevYpos, std::vector<std::vector<float>>& circles, GLuint VBO, GLuint VAO, float radius, int sides) {
     double xpos, ypos;
     glfwGetCursorPos(window, &xpos, &ypos);
@@ -17,6 +20,11 @@ void handleCursorMovement(GLFWwindow* window, double& prevXpos, double& prevYpos
     updateVertexBuffer(VBO, currentCircle);
     drawCircle(VAO, VBO, currentCircle, GL_TRIANGLE_FAN);
 
+    if (ImGui::IsAnyItemHovered())
+    {
+        return;
+    }
+
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
         int num_samples = std::max(static_cast<int>(sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)) / radius), 1);
         for (int i = 0; i <= num_samples; ++i) {
@@ -27,6 +35,8 @@ void handleCursorMovement(GLFWwindow* window, double& prevXpos, double& prevYpos
             circles.push_back(currentCircle);
         }
     }
+
+
     prevXpos = xpos;
     prevYpos = ypos;
 }
