@@ -3,7 +3,6 @@
 #include <sstream>
 #include <iostream>
 
-
 std::string readShaderFile(const char* filename) {
     std::ifstream file(filename);
     std::stringstream buffer;
@@ -28,7 +27,6 @@ GLuint createShaderProgram(const char* vertexShaderPath, const char* fragmentSha
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
-
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
