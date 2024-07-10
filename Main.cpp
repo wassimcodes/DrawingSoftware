@@ -25,7 +25,7 @@ int main() {
     WindowManager::setupCallbacks(window);
 
     
-    setWindowIcon(window, "D:/C++/Drawing_Software/Icon/brushImage.jpg");
+    setWindowIcon(window, "D:/C++/wackyDrawingSoft_tutorial/Icon/brushImage.jpg");
 
     glfwSwapInterval(0);
     GuiManager::Init(window);
