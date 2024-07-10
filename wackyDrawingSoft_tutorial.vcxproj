@@ -120,8 +120,8 @@
     <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include\stb;D:\C++\wackyDrawingSoft_tutorial\ImGuiApp\MyApplication;D:\C++\wackyDrawingSoft_tutorial\Libraries\include;D:\C++\wackyDrawingSoft_tutorial\ImGuiApp\MyApplication\backends;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\C++\wackyDrawingSoft_tutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\woule\Documents\c++\DrawingSoftware\Libraries\include\stb;C:\Users\woule\Documents\c++\DrawingSoftware\ImGuiApp\MyApplication;C:\Users\woule\Documents\c++\DrawingSoftware\Libraries\include;C:\Users\woule\Documents\c++\DrawingSoftware\ImGuiApp\MyApplication\backends;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\woule\Documents\c++\DrawingSoftware\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\C++\wackyDrawingSoft_tutorial\Libraries\include\stb;D:\C++\wackyDrawingSoft_tutorial\ImGuiApp\MyApplication;D:\C++\wackyDrawingSoft_tutorial\Libraries\include;D:\C++\wackyDrawingSoft_tutorial\ImGuiApp\MyApplication\backends;$(IncludePath)</IncludePath>
