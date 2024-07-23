@@ -94,7 +94,7 @@ void GuiManager::CreateUI(std::vector<std::vector<float>>& circles) {
         ImGui::EndMenuBar();
     }
 
-    ImGui::Text("fps: %.1f ", ImGui::GetIO().Framerate);
+    //ImGui::Text("fps: %.1f ", ImGui::GetIO().Framerate);
     ImGui::End();
 }
 
