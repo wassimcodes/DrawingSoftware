@@ -16,16 +16,18 @@ extern ImVec4 selected_color;
 extern float brushSize;
 extern int brushSizeDisplay;
 
+// Window Screen
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
+// Main function
 int main() {
     GLFWwindow* window = WindowManager::createWindow(720, 720, "Wacky Drawing Software");
     WindowManager::setupCallbacks(window);
 
     
-    setWindowIcon(window, "C:/Users/woule/Documents/c++/DrawingSoftware/Icon/brushImage.jpg");
+    setWindowIcon(window, "C:/Users/woule/Documents/c++/DrawingSoftware/Images/brushImage.jpg");
 
     glfwSwapInterval(0);
     GuiManager::Init(window);
@@ -36,6 +38,9 @@ int main() {
     const int sides = 60;
 
     std::vector<std::vector<float>> circles;
+
+    // Main loop
+
 
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
