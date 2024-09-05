@@ -26,6 +26,9 @@ void WindowManager::setupCallbacks(GLFWwindow* window) {
     glfwSetKeyCallback(window, key_callback);
 }
 
+
+// Window Icon
+
 void setWindowIcon(GLFWwindow* window, const char* imagePath) {
     int width, height, channels;
 
